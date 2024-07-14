@@ -6,7 +6,7 @@ import hashlib
 
 app = Flask(__name__)
 
-SECRET_TOKEN = = os.getenv('WEBHOOK_SECRET_TOKEN')
+SECRET_TOKEN = os.getenv('WEBHOOK_SECRET_TOKEN')
 
 def verify_github_signature(request):
     signature = request.headers.get('X-Hub-Signature-256')
