@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./jellyfin/library:/config
+      - ./jellyfin/tvseries:/data/tvshows
+      - ./jellyfin/movies:/data/movies
+    ports:
+      - 8096:8096
+    restart: unless-stopped
