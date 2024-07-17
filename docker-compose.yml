@@ -15,21 +15,3 @@ services:
     ports:
       - 8096:8096
     restart: unless-stopped
-    networks:
-      - net
-  
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    ports:
-      - 80:80
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - jellyfin
-    networks:
-      - net
-
-networks:
-  net:
-    driver: bridge
