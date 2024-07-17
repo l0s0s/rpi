@@ -9,9 +9,9 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./jellyfin/library:/config
-      - ./jellyfin/tvseries:/data/tvshows
-      - ./jellyfin/movies:/data/movies
+      - ./config:/config
+      - ./tvseries:/data/tvshows
+      - ./movies:/data/movies
     ports:
       - 8096:8096
     restart: unless-stopped

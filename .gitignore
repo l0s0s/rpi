@@ -1,2 +1,4 @@
 .env
-jellyfin
+config
+movies
+tvseries
