@@ -55,3 +55,10 @@ services:
       - name: "Portainer"
         logo: "assets/tools/portainer.png"
         url: "https://localhost:9443"
+
+  - name: "Network"
+    icon: "fas fa-network-wired"
+    items:
+      - name: "Router"
+        logo: "assets/tools/router.png"
+        url: "http://192.168.0.99"
