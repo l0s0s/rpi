@@ -34,3 +34,28 @@ services:
       - ./portainer:/data
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
+
+  nextcloud:
+    image: nextcloud:apache
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PASSWORD=nextcloud
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+    ports:
+      - 8080:80
+    restart: always
+    volumes:
+      - ./nextcloud:/var/www/html
+  
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=nextcloud
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+    restart: always
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    expose:
+      - 5432
