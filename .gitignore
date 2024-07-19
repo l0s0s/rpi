@@ -1,5 +1,5 @@
 .env
-config
+jupyter
 movies
 tvseries
 portainer
@@ -9,3 +9,6 @@ complete
 incomplete
 transmission
 netdata
+transmission
+notebooks
+jellyfin
