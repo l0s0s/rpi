@@ -64,6 +64,10 @@ services:
         logo: "assets/tools/portainer.png"
         url: "https://localhost:9443"
 
+      - name: "Netdata"
+        logo: "assets/tools/netdata.png"
+        url: "http://localhost:19999"
+
   - name: "Network"
     icon: "fas fa-network-wired"
     items:
