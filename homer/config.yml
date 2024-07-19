@@ -49,6 +49,14 @@ services:
         logo: "assets/tools/jellyfin.png"
         url: "http://localhost:8096"
 
+      - name: "Nextcloud"
+        logo: "assets/tools/nextcloud.png"
+        url: "http://localhost:8080"
+
+      - name: "Transmission"
+        logo: "assets/tools/transmission.png"
+        url: "http://localhost:9091"
+
   - name: "System"
     icon: "fas fa-server"
     items:
