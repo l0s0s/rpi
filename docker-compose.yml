@@ -76,7 +76,6 @@ services:
 
   netdata:
     image: netdata/netdata
-    container_name: netdata
     ports:
       - 19999:19999
     cap_add:
@@ -91,4 +90,14 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /etc/os-release:/host/etc/os-release:ro
+    restart: unless-stopped
+
+  unbound:
+    image: mvance/unbound:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "853:853/tcp"
+    volumes:
+      - ./unbound:/opt/unbound/etc/unbound:ro
     restart: unless-stopped
