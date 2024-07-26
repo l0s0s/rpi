@@ -47,23 +47,23 @@ services:
     items:
       - name: "Jellyfin"
         logo: "assets/tools/jellyfin.png"
-        url: "http://localhost:8096"
+        url: "http://192.168.0.164:8096"
 
       - name: "Nextcloud"
         logo: "assets/tools/nextcloud.png"
-        url: "http://localhost:8080"
+        url: "http://192.168.0.164:8080"
 
       - name: "Transmission"
         logo: "assets/tools/transmission.png"
-        url: "http://localhost:9091"
+        url: "http://192.168.0.164:9091"
 
   - name: "System"
     icon: "fas fa-server"
     items:
       - name: "Portainer"
         logo: "assets/tools/portainer.png"
-        url: "https://localhost:9443"
+        url: "https://192.168.0.164:9443"
 
       - name: "Netdata"
         logo: "assets/tools/netdata.png"
-        url: "http://localhost:19999"
+        url: "http://192.168.0.164:19999"
