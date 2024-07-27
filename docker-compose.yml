@@ -34,34 +34,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
-  # transmission:
-  #   image: linuxserver/transmission
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - TZ=Europe/Kiev
-  #   volumes:
-  #     - ./transmission:/config
-  #     - ./jellyfin/media:/downloads
-  #   ports:
-  #     - 9091:9091
-  #     - 51413:51413
-  #     - 51413:51413/udp
-  #   restart: unless-stopped
-
-  deluge:
-    image: linuxserver/deluge
-    container_name: deluge
+  transmission:
+    image: linuxserver/transmission
     environment:
-      - PUID=1000 
+      - PUID=1000
       - PGID=1000
       - TZ=Europe/Kiev
     volumes:
-      - ./deluge:/config
+      - ./transmission:/config
       - ./jellyfin/media:/downloads
     ports:
-      - 8112:8112  
-      - 58846:58846  
-      - 58946:58946
-      - 58946:58946/udp  
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
     restart: unless-stopped
