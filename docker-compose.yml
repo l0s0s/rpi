@@ -34,17 +34,34 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
-  transmission:
-    image: linuxserver/transmission
+  # transmission:
+  #   image: linuxserver/transmission
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Europe/Kiev
+  #   volumes:
+  #     - ./transmission:/config
+  #     - ./jellyfin/media:/downloads
+  #   ports:
+  #     - 9091:9091
+  #     - 51413:51413
+  #     - 51413:51413/udp
+  #   restart: unless-stopped
+
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    container_name: qbittorrent
     environment:
-      - PUID=1000
+      - PUID=1000 
       - PGID=1000
       - TZ=Europe/Kiev
+      - WEBUI_PORT=9091
     volumes:
-      - ./transmission:/config
+      - ./qbittorrent/config:/config
       - ./jellyfin/media:/downloads
     ports:
-      - 9091:9091
-      - 51413:51413
-      - 51413:51413/udp
+      - 6881:6881 
+      - 6881:6881/udp
+      - 8080:8080
     restart: unless-stopped
