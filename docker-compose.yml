@@ -42,7 +42,7 @@ services:
       - TZ=Europe/Kiev
     volumes:
       - ./transmission:/config
-      - ./jellyfin:/downloads
+      - ./jellyfin/media:/downloads
     ports:
       - 9091:9091
       - 51413:51413
