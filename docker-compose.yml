@@ -57,6 +57,8 @@ services:
       - PGID=1000
       - TZ=Europe/Kiev
       - WEBUI_PORT=8080
+      - QBT_WEBUI_USERNAME=admin
+      - QBT_WEBUI_PASSWORD=admin
     volumes:
       - ./qbittorrent/config:/config
       - ./jellyfin/media:/downloads
