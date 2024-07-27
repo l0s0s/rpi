@@ -56,12 +56,12 @@ services:
       - PUID=1000 
       - PGID=1000
       - TZ=Europe/Kiev
-      - WEBUI_PORT=9091
+      - WEBUI_PORT=8080
     volumes:
       - ./qbittorrent/config:/config
       - ./jellyfin/media:/downloads
     ports:
       - 6881:6881 
       - 6881:6881/udp
-      - 9091:9091
+      - 8080:8080
     restart: unless-stopped
