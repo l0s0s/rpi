@@ -1,19 +1,19 @@
 version: '3.7'
 
 services:
-  jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
-    container_name: jellyfin
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - ./jellyfin/config:/config
-      - ./jellyfin/media:/data
-    ports:
-      - 8096:8096
-    restart: unless-stopped
+  # jellyfin:
+  #   image: lscr.io/linuxserver/jellyfin:latest
+  #   container_name: jellyfin
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Etc/UTC
+  #   volumes:
+  #     - ./jellyfin/config:/config
+  #     - ./jellyfin/media:/data
+  #   ports:
+  #     - 8096:8096
+  #   restart: unless-stopped
 
   homer:
     image: b4bz/homer:latest
@@ -33,17 +33,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
-  transmission:
-    image: linuxserver/transmission
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Kiev
-    volumes:
-      - ./transmission:/config
-      - ./jellyfin/media:/downloads
-    ports:
-      - 9091:9091
-      - 51413:51413
-      - 51413:51413/udp
-    restart: unless-stopped
+  # transmission:
+  #   image: linuxserver/transmission
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Europe/Kiev
+  #   volumes:
+  #     - ./transmission:/config
+  #     - ./jellyfin/media:/downloads
+  #   ports:
+  #     - 9091:9091
+  #     - 51413:51413
+  #     - 51413:51413/udp
+  #   restart: unless-stopped
